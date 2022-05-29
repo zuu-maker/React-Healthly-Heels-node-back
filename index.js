@@ -13,6 +13,11 @@ app.use(cors())
 
 // app.use("/api", authRoutes)
 fs.readdirSync("./routes").map(r => app.use("/api",require("./routes/" + r)));
+app.get("/",(req, res) => {
+    res.send({
+        send:"we are winning"
+    })
+})
 
 const port = process.env.PORT || 8000;
 
