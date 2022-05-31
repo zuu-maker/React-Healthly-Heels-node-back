@@ -14,18 +14,14 @@ app.use(cors())
 
 // app.use("/api", authRoutes)
 // fs.readdirSync("./routes").map(r => app.use("/api",require("./routes/" + r)));
-app.get("/create-payment-intent", (req, res) => {
-    res.send({
-        create:"create - payment"
-    })
-})
+// app.get("/create-payment-intent", (req, res) => {
+//     res.send({
+//         create:"create - payment"
+//     })
+// })
 app.get("/create-payment-intent", createPaymentIntent)
-// app.post("/create-payment-intent", createPaymentIntent)
-app.get("/",(req, res) => {
-    res.send({
-        send:"we are winning"
-    })
-})
+app.post("/create-payment-intent", createPaymentIntent)
+
 
 const port = process.env.PORT || 8000;
 
