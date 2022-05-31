@@ -19,7 +19,8 @@ app.get("/create-payment-intent", (req, res) => {
         create:"create - payment"
     })
 })
-app.post("/create-payment-intent", createPaymentIntent)
+app.get("/create-payment-intent", createPaymentIntent)
+// app.post("/create-payment-intent", createPaymentIntent)
 app.get("/",(req, res) => {
     res.send({
         send:"we are winning"
